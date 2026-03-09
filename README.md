@@ -5,7 +5,7 @@ This is the C# / .NET 8 conversion of the original Java Spring Boot Chat Applica
 ## Technology Stack
 - **Framework:** ASP.NET Core 8+ Web API
 - **Real-time:** SignalR (Replacing STOMP/WebSocket)
-- **Database:** Entity Framework Core with SQLite (Auto-migrated)
+- **Database:** Entity Framework Core with MySQL
 - **Security:** JWT Bearer Authentication with Cookies
 - **Language:** C#
 

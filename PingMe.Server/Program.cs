@@ -14,10 +14,10 @@ builder.Services.AddSignalR();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configure DB Context with SQLite or SqlServer
+// Configure DB Context with MySQL
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ChatDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") 
-                      ?? "Data Source=chat.db")); // Standard C# default is chat.db for SQLite
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))); 
 
 // Configure Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
